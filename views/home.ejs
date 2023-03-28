@@ -1,0 +1,17 @@
+<ul class="list-group" id="defaultview">
+    <% if(locals.habitsList.length == 0){ %>
+        <br>
+        <p class="text-primary-emphasis text-center fs-2">There are no activities to track!</p>
+    <% } else { %>
+        <% for(let habit of locals.habitsList) { %>
+            <li class="list-group-item list-group-item border-0">
+                <p class="fs-5"><i class="fa fa-check-square fs-6 text-info"></i> <%= habit.description %></p>
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item list-group-item-warning flex-fill border-0">Total number of days: <%= habit.currentDays %></li>
+                    <li class="list-group-item list-group-item-warning flex-fill border-0">Tracking Interval: Daily</li>
+                </ul>
+            </li>
+            <hr>
+        <% } %>
+    <% } %>
+</ul>
