@@ -1,17 +1,23 @@
+//configure express, port and host
 const express = require('express');
 const app = express();
 const port = 8000;
 const hostname = '127.0.0.1';
-const path = require('path');
-const session = require('express-session');
-const flash = require('connect-flash');
-const customMware = require('./config/middleware');
-const expressLayouts = require('express-ejs-layouts');
 
 //configure mongoose connection
 const db = require('./config/mongoose');
 
+const path = require('path');
+const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
+
+//importing modules for configuring flash notifications
+const session = require('express-session');
+const flash = require('connect-flash');
+
+//created a middleware for adding flash messages
+const customMware = require('./config/middleware');
+
 // for parsing application/json
 app.use(bodyParser.json());
 // for parsing application/xwww-form-urlencoded
@@ -26,9 +32,12 @@ app.use(session({
         maxAge: (1000 * 60 * 100)
     }
 }));
+
+//configuring flash
 app.use(flash());
 app.use(customMware.setFlash);
 
+//initialising the assets folder
 app.use(express.static('./assets'));
 
 app.use(expressLayouts);
@@ -36,6 +45,7 @@ app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
+//configuring views
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
