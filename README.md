@@ -24,6 +24,7 @@ The folder structure is scalable (separate models, controllers, assets and route
 
 <img width="473" alt="habitTracker1" src="https://user-images.githubusercontent.com/96715878/228164173-9af2452a-c9b3-44d9-82a0-5e7216e87bbc.png">
 <img width="476" alt="habitTracker2" src="https://user-images.githubusercontent.com/96715878/228164218-9dbc6df3-4896-4585-8e34-191c253639b6.png">
+<img width="410" alt="habitTracker3" src="https://user-images.githubusercontent.com/96715878/228182025-9e3dc627-f8d2-4546-96ca-1dd75ed5699d.png">
 
 ## Future Improvements
 
